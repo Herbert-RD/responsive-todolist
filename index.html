@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO-DO List | Aceleradora Ágil</title>
+
+  <script src="./js/index.js" defer ></script>
+
+</head>
+<body>
+
+  <div class="about-me">
+
+    <div class="image-wrapper">
+      <img id="profile-img" src="./assets/profile-pic.png" alt="">
+    </div>
+
+    <h1 id="name">Herbert Richard</h1>
+    <h2 id="description">Desenvolvedor Web, atualmente estudando e buscando uma oportunidade de experiência profissional.</h2>
+    <ul id="links">
+      <li><a href="https://www.linkedin.com/in/herbert-richard-25113226b/">LinkeDin</a></li>
+      <li><a href="https://wa.me/8196018238">Whatsapp</a></li>
+      <li><a href="https://www.instagram.com/hebert_rd/">Instagram</a></li>
+      <li><a href="#">Twitter</a></li>
+    </ul>
+  </div>
+
+  <div class="about-me-dummy"></div>
+
+  <main>
+    <div class="todo-section">
+      <div class="nav">
+        <button id="add-item"><img src="./assets/add-icon.svg" alt="Botão de adicionar tarefa" id="add-icon-1"><img src="assets/add-icon-big.svg" alt="Botão de adicionar tarefa" id="add-icon-2" srcset=""></button>
+        <p>LISTA DE TAREFAS</p>
+      </div>
+        <div class="todo-wrapper">
+          <div class="cycle-button-wrapper">
+            <button class="button-selected " id="day-button">Dia</button>
+            <button class="button-not-selected " id="night-button">Noite</button>
+          </div>
+          
+          <div class="section-wrapper">
+            <div class="day-section">
+              <ul>
+                <li class="1"><button class="done-button 1"></button><p>DIA</p></li>
+
+              </ul>
+            </div>
+            <div class="night-section hide">
+              <ul>
+                <li class="2"><button class="done-button 2"></button>NOITE</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal-wrapper hide-modal">
+      <div class="add-task-modal">
+        <p>ADICIONAR TAREFA</p>
+        <button id="close-modal"><img src="./assets/close-icon.png" alt="Icone de X"></button>
+        <form>
+          <label for="your-task">Sua tarefa:</label>
+          <input type="text" id="your-task">
+
+          <div class="shift-check">
+            <label for="day-night-checkbox">Turno da tarefa:</label>
+
+            <div class="checkbox-wrapper">
+              <div id="day-checkbox-wrapper" class="styled-checkbox unstyled-checkbox">
+                <label class="checkbox-label" for="modal-day-checkbox">Dia</label>
+                <input type="checkbox" name="" id="modal-day-checkbox" class="day-night-checkbox">  
+              </div>
+              <div id="night-checkbox-wrapper" class="styled-checkbox unstyled-checkbox">
+                <label  class="checkbox-label for="modal-night-checkbox">Noite</label>
+                <input type="checkbox" name="" id="modal-night-checkbox" class="day-night-checkbox">
+              </div>
+            </div>
+          </div>
+          <button id="save-task-button" type="submit">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  
+</body>
+</html>

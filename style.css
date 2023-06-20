@@ -1,0 +1,524 @@
+:root {
+  font-size: 62.5%;
+
+  --primary-color: #3B82F6;
+  --secondary-color: rgba(34, 98, 198, 0.06);
+  --tt-primary: white;
+  --tt-secondary: #444444
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+
+
+}
+
+
+.about-me {
+  background: linear-gradient(180.73deg, #1D4ED8 0.63%, #3B82F6 97.9%);
+  border-radius: 0px 0px 32px 32px;
+  padding: 4.2rem  0 4.2rem 0;
+  margin-bottom: 5.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+
+  align-items: center;
+
+  
+}
+
+.image-wrapper {
+  width: 20.2rem;
+  height: 20.2rem;
+  background-color: white;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  border-radius: 360px;
+}
+
+#profile-img{
+  width: 19.6rem;
+  margin: 0 auto;
+
+  border-radius: 360px;
+}
+
+#name {
+  color: var(--tt-primary);
+  font-size: 2.8rem;
+}
+
+
+#description {
+  color: var(--tt-primary);
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  width: 29rem;
+  text-align: center;
+}
+
+
+.about-me ul {
+  display: flex;
+  list-style: none;
+  gap: 2.2rem;
+
+  text-align: center;
+}
+
+.about-me ul li a{
+  text-decoration: none underline;
+  color: white;
+}
+
+.todo-section {
+  margin: 0 2.8rem;
+}
+
+.nav {
+  display: grid;
+  width: 100%;
+
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-template-rows: 1;
+
+  grid-template-areas: "button title title ...";
+
+  margin-bottom: 0.9rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.nav button {
+
+  grid-area: button;
+  text-align: left;
+
+  background-color: white;
+  border: none;
+}
+.nav p {
+  color: var(--tt-secondary);
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: bold;
+  align-self: center;
+
+  grid-area: title;
+}
+
+.cycle-button-wrapper {
+  display: flex;
+}
+
+
+.todo-wrapper .cycle-button-wrapper button {
+  width: 100%;
+  height: 100%;
+  height: 4.5rem;
+
+
+  border: solid var(--primary-color);
+
+
+
+  font-size: 2.2rem;
+  font-weight: bold;
+  
+}
+
+
+
+#day-button {
+  border-radius: 16px 0px 0px 0px;;
+  border-right: none;
+
+}
+
+
+#night-button {
+  border-radius: 0px 16px 0px 0px;
+  border-left: none;
+
+  
+}
+
+.button-not-selected {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.button-selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.day-section, .night-section {
+  background-color: rgba(34, 98, 198, 0.06);
+  padding: 0 1.3rem 1.3rem;
+}
+
+.day-section ul li, .night-section ul li{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  padding: 2.5rem 0;
+
+  align-items: center;
+
+  font-weight: 500;
+  color: var(--tt-secondary);
+  overflow-wrap: anywhere;
+  font-size: 1.6rem
+  /* font-size: clamp(.2rem, .8rem + 1vw, 1.6rem); */
+}
+
+.day-section ul li p {
+  width: clamp(10rem, 5rem + 40vw, 100rem);
+}
+
+
+
+.done-button {
+  background-image: url(assets/done-icon.png);
+  image-rendering: -webkit-optimize-contrast;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.done-button {
+  max-width: 3.2rem;  
+  background-color: rgba(34, 98, 198, 0.03);;
+  border: none;
+}
+
+.modal-wrapper {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 5rem;
+
+  position: fixed;
+  text-align: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  background-color: rgba(23, 34, 56, 0.42);;
+}
+
+
+.add-task-modal {
+  position: relative;
+
+  background-color: white;
+  width: 100%;
+  height: 28.4rem;
+  border-radius: 16px;
+
+  padding: 1.8rem 2.7rem;
+
+  box-shadow: 1px 0px 22px 13px rgba(0, 0, 0, 0.25);
+}
+
+.add-task-modal p {
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: var(--tt-secondary);
+  margin-bottom: 1.6rem;
+}
+
+#close-modal {
+  position:absolute;
+  top: 1.3rem;
+  right: 1.3rem;
+
+  background: white;
+  border: none;
+}
+
+.add-task-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-task-modal form label {
+  font-size: 1.2rem;
+  color: #7E8084;
+
+  text-align: left;
+  margin-left: 1rem;
+}
+
+#your-task {
+  border: none;
+  outline: 0;
+
+  border-radius: 1.6rem;
+  border: .2rem solid #8E9093;
+
+  width: 100%;
+  height: 4.6rem;
+
+  padding: 1rem;
+}
+
+
+#your-task:focus{
+  border: .2rem solid var(--primary-color);
+}
+
+.shift-check label {
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+.checkbox-wrapper{
+  display: grid;
+
+  width: 100%;
+  
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1;
+  grid-template-areas: "day-button night-button";
+}
+
+.shift-check {
+  margin-top: 1.6rem;
+}
+
+.checkbox-wrapper div:nth-child(1){
+
+  grid-area: day-button;
+
+}
+
+.checkbox-wrapper div:nth-child(2){
+  grid-area: night-button;
+  
+}
+
+.checkbox-wrapper div {
+  position: relative;
+  text-align: center;
+}
+
+.styled-checkbox {
+  border-radius: 1.6rem 0 0 1.6rem;
+  border: .3rem solid var(--primary-color);
+  background-color: var(--primary-color);
+}
+.shift-check .checkbox-wrapper .unstyled-checkbox {
+  background-color: white;
+  
+}
+
+.shift-check .unstyled-checkbox .checkbox-label {
+  color: var(--primary-color);
+}
+
+
+#night-checkbox-wrapper {
+  border-radius: 0px 16px 16px 0px;
+}
+
+
+.day-night-checkbox {
+  width: 100%;
+  height: 4.6rem;
+
+  position: relative;
+  z-index: 1;
+
+  appearance: none;
+}
+
+
+
+.checkbox-wrapper .checkbox-label {
+  position: absolute;
+
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: white;
+  text-align: center;
+  margin: auto 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  z-index: 0;
+}
+
+
+#add-icon-2{
+  display: none;
+}
+
+
+
+
+
+#save-task-button {
+  margin-top: 1.6rem;
+  width: 9rem;
+  height: 3.5rem;
+  background-color: #65A30D;
+  border: none;
+
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  border-radius: 1.6rem;
+  text-align: center;
+  align-self: center;
+
+}
+
+.hide, .hide-modal {
+  display: none;
+  visibility: 0;
+  opacity: 0;
+
+  z-index: -1;
+}
+
+
+@media (min-width:900px){
+  body {
+    display: flex;
+  }
+
+  .about-me {
+    position: fixed;
+
+    height: 100vh;
+    border-radius: 0 3.2rem 3.2rem 0;
+    width: clamp(25rem, 20rem + 10vw, 35rem);
+  }
+
+  #links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  main {
+
+    width: clamp(50rem, 34rem + 40vw, 150rem);
+    max-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3rem;
+  }
+
+  .todo-section {
+    margin: 2.8rem 0;
+    width: 100%;
+
+  }
+
+  .nav p {
+    font-size: 2.8rem;
+  }
+
+  .hide {
+    display: block;
+    visibility: 1;
+    opacity: 1;
+    z-index: 0;
+  }
+
+  .section-wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1;
+  }
+
+  
+  .todo-section ul li p{
+    width: 100%;
+  }
+
+  .todo-section ul li button {
+    width: 3.2rem;
+    width: 100%;
+  }
+
+  #add-icon-1{
+    display: none;
+  }
+  #add-icon-2{
+    display: block;
+  }
+
+  .about-me-dummy{
+    height: 100vh;
+    border-radius: 0 3.2rem 3.2rem 0;
+    width: clamp(25rem, 20rem + 10vw, 35rem);
+  }
+
+  .button-not-selected {
+    background-color: var(--primary-color);
+    color: white
+  }
+
+  .day-section {
+    border-right: solid var(--primary-color) .2rem;
+    min-height: 80vh;
+
+    border-radius: 0 0 0 1.6rem;
+  }
+
+  .night-section {
+    border-left: solid var(--primary-color) .2rem;
+    min-height: 80vh;
+
+    border-radius: 0 0 1.6rem 0;
+  }
+
+  .add-task-modal {
+    max-width: 35rem;
+  }
+  
+}
